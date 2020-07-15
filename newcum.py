@@ -1,4 +1,5 @@
 import random
+# This is the brains
 
 co = 0
 
