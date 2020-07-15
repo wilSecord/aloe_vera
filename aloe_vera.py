@@ -58,22 +58,23 @@ for item in ar:
         if val.__round__(3) >= .7:
             i = ar.index(item)
             e = item.index(val)
-            fi[i][e] = '+'
-fi[slx][sly] = '#'
+            fi[i][e] = '↑'
+fi[slx][sly] = '█'
 print('''
 ''')
+draw(fi)
 while True:
     mo = input('> ')
     if mo == 's':
         for item in fi:
-            if '#' in item:
+            if '█' in item:
                 t = fi.index(item)
-                t2 = item.index('#')
+                t2 = item.index('█')
                 o2 = fi[t + 1][t2]
                 if fi[t + 1][t2] == 1:
                     break
                 else:
-                    fi[t + 1][t2] = '#'
+                    fi[t + 1][t2] = '█'
                     fi[t][t2] = o
                     o = o2
                     break
@@ -82,14 +83,14 @@ while True:
         ''')
     elif mo == 'w':
         for item in fi:
-            if '#' in item:
+            if '█' in item:
                 t = fi.index(item)
-                t2 = item.index('#')
+                t2 = item.index('█')
                 o2 = fi[t - 1][t2]
                 if fi[t +- 1][t2] == 1:
                     break
                 else:
-                    fi[t - 1][t2] = '#'
+                    fi[t - 1][t2] = '█'
                     fi[t][t2] = o
                     o = o2
                     break
@@ -98,14 +99,14 @@ while True:
         ''')
     elif mo == 'd':
         for item in fi:
-            if '#' in item:
+            if '█' in item:
                 t = fi.index(item)
-                t2 = item.index('#')
+                t2 = item.index('█')
                 o2 = fi[t][t2 + 1]
                 if fi[t][t2 + 1] == 1:
                     break
                 else:
-                    fi[t][t2 + 1] = '#'
+                    fi[t][t2 + 1] = '█'
                     fi[t][t2] = o
                     o = o2
                     break
@@ -114,14 +115,14 @@ while True:
         ''')
     elif mo == 'a':
         for item in fi:
-            if '#' in item:
+            if '█' in item:
                 t = fi.index(item)
-                t2 = item.index('#')
+                t2 = item.index('█')
                 o2 = fi[t][t2 - 1]
                 if fi[t][t2 - 1] == 1:
                     break
                 else:
-                    fi[t][t2 - 1] = '#'
+                    fi[t][t2 - 1] = '█'
                     fi[t][t2] = o
                     o = o2
                     break
