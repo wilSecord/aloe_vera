@@ -34,6 +34,7 @@ def join(mer):
         st = st.replace('0', '.')
         st = st.replace('1', '↑')
         st = st.replace('8', '█')
+        st = st.replace('9', '░')
         st = st.replace('2', '|')
     print(st)
 
@@ -50,6 +51,7 @@ def spawn():
             for item in fcc:
                 item = item.rstrip('\n')
                 item = item.replace('8', '0')
+                item = item.replace('9', '0')
                 lst = item.split(' ')
                 del lst[0]
                 for i in range(len(lst)):
@@ -165,6 +167,7 @@ def mo_b():
                                     for item in fcc:
                                         item = item.rstrip('\n')
                                         item = item.replace('8', '0')
+                                        item = item.replace('9', '0')
                                         lst = item.split(' ')
                                         del lst[0]
                                         for i in range(len(lst)):
@@ -206,6 +209,7 @@ def mo_b():
                                     for item in fcc:
                                         item = item.rstrip('\n')
                                         item = item.replace('8', '0')
+                                        item = item.replace('9', '0')
                                         lst = item.split(' ')
                                         del lst[0]
                                         for i in range(len(lst)):
@@ -267,6 +271,7 @@ def mo_b():
                                     for item in fcc:
                                         item = item.rstrip('\n')
                                         item = item.replace('8', '0')
+                                        item = item.replace('9', '0')
                                         lst = item.split(' ')
                                         del lst[0]
                                         for i in range(len(lst)):
@@ -311,6 +316,7 @@ def mo_b():
                                     for item in fcc:
                                         item = item.rstrip('\n')
                                         item = item.replace('8', '0')
+                                        item = item.replace('9', '0')
                                         lst = item.split(' ')
                                         del lst[0]
                                         for i in range(len(lst)):
@@ -470,3 +476,134 @@ def mo_b():
             for item in row:
                 cf.write(f' {str(item)}')
             cf.write('\n')
+
+
+def enemy_s():
+    ran1 = random.randint(0, 9)
+    ran2 = random.randint(0, 9)
+    while True:
+        if fi[ran1][ran2] == 8:
+            pass
+        elif fi[ran1][ran2] == 1:
+            pass
+        else:
+            fi[ran1][ran2] = 9
+            break
+
+
+for item in fi:
+    if 8 in item:
+        p1 = fi.index(item)
+        p2 = item.index(8)
+for item in fi:
+    if 9 in item:
+        e1 = fi.index(item)
+        e2 = item.index(9)
+
+
+def enemy_m():
+    for item in fi:
+        if 8 in item:
+            p1 = fi.index(item)
+            p2 = item.index(8)
+            for item in fi:
+                if 9 in item:
+                    e1 = fi.index(item)
+                    e2 = item.index(9)
+                    if p2 < e2:
+                        if fi[e1][e2 - 1] == 1:
+                            try:
+                                fi[e1 - 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1 + 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                        elif fi[e1][e2 - 1] == 2:
+                            try:
+                                fi[e1 - 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1 + 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                        else:
+                            try:
+                                fi[e1][e2 - 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1][e2 + 1] = 9
+                                break
+                    elif p2 > e2:
+                        if fi[e1][e2 + 1] == 1:
+                            try:
+                                fi[e1 - 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1 + 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                        elif fi[e1][e2 + 1] == 2:
+                            try:
+                                fi[e1 - 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1 + 1][e2] = 9
+                                fi[e1][e2] = 0
+                                break
+                        else:
+                            fi[e1][e2 + 1] = 9
+                            fi[e1][e2] = 0
+                            break
+                    elif p1 < e1:
+                        if fi[e1 - 1][e2] == 1:
+                            try:
+                                fi[e1][e2 - 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1][e2 + 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                        elif fi[e1 - 1][e2] == 2:
+                            try:
+                                fi[e1][e2 - 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1][e2 + 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                        else:
+                            fi[e1 - 1][e2] = 9
+                            fi[e1][e2] = 0
+                            break
+                    elif p1 > e1:
+                        if fi[e1 + 1][e2] == 1:
+                            try:
+                                fi[e1][e2 - 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1][e2 + 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                        elif fi[e1 + 1][e2] == 2:
+                            try:
+                                fi[e1][e2 - 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                            except IndexError:
+                                fi[e1][e2 + 1] = 9
+                                fi[e1][e2] = 0
+                                break
+                        else:
+                            fi[e1 + 1][e2] = 9
+                            fi[e1][e2] = 0
+                            break
+
