@@ -29,3 +29,8 @@ input you must hit enter to submit/confirm your input:
 - To place wood (|), use TFGH, directionally.
 
 These controls seem strange at first but become second nature the more you use them.
+# WARNING
+## THIS GAME IS VERY WIP, 
+That being said, please report any bugs you might find throughout playing.
+
+#### Thank you, and enjoy!
