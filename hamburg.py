@@ -1,6 +1,6 @@
-from newcum import join, mo_b, ar, fi
 import random
-# This is the run file
+from newcum import spawn, join, new, mo_b, fi, co, on
 
+spawn()
 while True:
     mo_b()
