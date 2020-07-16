@@ -151,6 +151,7 @@ def mo_b():
                             break
                     except IndexError:
                         try:
+                            t2 = item.index(8)
                             cu = 0
                             co1 -= 1
                             cur = ''
@@ -172,9 +173,7 @@ def mo_b():
                                         cu += 1
                                 except IndexError:
                                     break
-                            ran = random.randint(0, 9)
-                            ran1 = random.randint(0, 9)
-                            fi[ran][ran1] = 8
+                            fi[0][t2] = 8
                             o = 0
                         except FileNotFoundError:
                             new()
@@ -193,6 +192,7 @@ def mo_b():
                     o2 = fi[t - 1][t2]
                     if t == 0:
                         try:
+                            t2 = item.index(8)
                             cu = 0
                             co1 += 1
                             cur = ''
@@ -214,9 +214,7 @@ def mo_b():
                                         cu += 1
                                 except IndexError:
                                     break
-                            ran = random.randint(0, 9)
-                            ran1 = random.randint(0, 9)
-                            fi[ran][ran1] = 8
+                            fi[9][t2] = 8
                             o = 0
                         except FileNotFoundError:
                             new()
@@ -253,6 +251,9 @@ def mo_b():
                             break
                     except IndexError:
                         try:
+                            for item in fi:
+                                if 8 in item:
+                                    t = fi.index(item)
                             cu = 0
                             co2 += 1
                             cur = ''
@@ -274,9 +275,7 @@ def mo_b():
                                         cu += 1
                                 except IndexError:
                                     break
-                            ran = random.randint(0, 9)
-                            ran1 = random.randint(0, 9)
-                            fi[ran][ran1] = 8
+                            fi[t][0] = 8
                             o = 0
                         except FileNotFoundError:
                             new()
@@ -296,6 +295,9 @@ def mo_b():
                     print(t2)
                     if t2 == 0:
                         try:
+                            for item in fi:
+                                if 8 in item:
+                                    t = fi.index(item)
                             cu = 0
                             co2 -= 1
                             cur = ''
@@ -317,9 +319,7 @@ def mo_b():
                                         cu += 1
                                 except IndexError:
                                     break
-                            ran = random.randint(0, 9)
-                            ran1 = random.randint(0, 9)
-                            fi[ran][ran1] = 8
+                            fi[t][9] = 8
                             o = 0
                         except FileNotFoundError:
                             new()
