@@ -27,7 +27,6 @@ fi = [
 ]
 
 
-
 def join(mer):
     st = ''
     for obj in mer:
@@ -192,11 +191,7 @@ def mo_b():
                     t = fi.index(item)
                     t2 = item.index(8)
                     o2 = fi[t - 1][t2]
-                    if fi[t - 1][t2] == 1:
-                        break
-                    elif fi[t - 1][t2] == 2:
-                        break
-                    elif t == 0:
+                    if t == 0:
                         try:
                             cu = 0
                             co1 += 1
@@ -227,6 +222,10 @@ def mo_b():
                             new()
                             fil = open('files.txt', 'a')
                             fil.writelines(f'{str(co1)},{str(co2)}\n')
+                    elif fi[t - 1][t2] == 2:
+                        break
+                    elif fi[t - 1][t2] == 1:
+                        break
                     else:
                         fi[t - 1][t2] = 8
                         fi[t][t2] = o
@@ -294,11 +293,8 @@ def mo_b():
                     t = fi.index(item)
                     t2 = item.index(8)
                     o2 = fi[t][t2 - 1]
-                    if fi[t][t2 - 1] == 1:
-                        break
-                    elif fi[t][t2 - 1] == 2:
-                        break
-                    elif t2 == 0:
+                    print(t2)
+                    if t2 == 0:
                         try:
                             cu = 0
                             co2 -= 1
@@ -329,6 +325,10 @@ def mo_b():
                             new()
                             fil = open('files.txt', 'a')
                             fil.writelines(f'{str(co1)},{str(co2)}\n')
+                    elif fi[t][t2 - 1] == 2:
+                        break
+                    elif fi[t][t2 - 1] == 1:
+                        break
                     else:
                         fi[t][t2 - 1] = 8
                         fi[t][t2] = o
