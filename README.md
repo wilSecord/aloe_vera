@@ -34,3 +34,6 @@ These controls seem strange at first but become second nature the more you use t
 That being said, please report any bugs you might find throughout playing.
 
 #### Thank you, and enjoy!
+
+#### A note from the programmer
+For all you nerds looking through the code, I know it looks like a dog with human hands wrote it so take all your corrections/suggestions, write them down on a peice of paper then burn it, thanks
